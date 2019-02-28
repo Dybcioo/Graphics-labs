@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="utf-8">
+        <title>Canvas</title>
+			<script type="text/javascript">
+				function draw(form) {
+					 var p1 = parseFloat( form.one.value );
+					 var p2 = parseFloat( form.two.value );
+					 var p3 = parseFloat( form.three.value );
+					 var p4 = parseFloat( form.four.value );
+					 var p5	= parseFloat( form.five.value );
+					 var sum = p1;
+					 var sumAll = p1 + p2 + p3 + p4 + p5;
+					 var radiany = Math.PI/180;
+					 var pom = 0;
+
+					 var canvas = document.getElementById( 'image' );
+					 var context = canvas.getContext( '2d' );
+					 context.clearRect( 0, 0, canvas.width, canvas.height );
+					 
+					context.beginPath();
+					context.arc( canvas.width/2, canvas.height/2, 200, 2*Math.PI, 0, false );
+					context.closePath();
+					context.lineWidth = 3;
+					context.strokeStyle = "#000";	//black
+					context.stroke();
+					
+					
+					context.beginPath();
+					context.moveTo( canvas.width/2, canvas.height/2 );
+					context.arc( canvas.width/2, canvas.height/2, 200, 270 * radiany, ((p1 / sumAll) * 360 + 270) * radiany, false );
+					context.closePath();
+					context.fillStyle = '#02d100';  //green
+					context.fill();
+					
+					
+					context.beginPath();
+					context.moveTo( canvas.width/2, canvas.height/2 );
+					context.arc( canvas.width/2, canvas.height/2, 200, ((sum/sumAll) * 360 + 270) * radiany, (((sum + p2)/sumAll) * 360 + 270) * radiany, false );
+					context.closePath();
+					context.fillStyle = '#ec0200';	//red
+					context.fill();
+					
+					sum+=p2;
+					
+					context.beginPath();
+					context.moveTo( canvas.width/2, canvas.height/2 );
+					context.arc( canvas.width/2, canvas.height/2, 200, ((sum/sumAll) * 360 + 270) * radiany, (((sum + p3)/sumAll) * 360 + 270) * radiany, false);
+					context.closePath();
+					context.fillStyle = '#0502dd';	//blue
+					context.fill();
+					
+					sum+=p3;
+					
+					context.beginPath();
+					context.moveTo( canvas.width/2, canvas.height/2 );
+					context.arc( canvas.width/2, canvas.height/2, 200, ((sum/sumAll) * 360 + 270) * radiany, (((sum + p4)/sumAll) * 360 + 270) * radiany, false );
+					context.closePath();
+					context.fillStyle = '#fefd3a';	//yellow
+					context.fill();
+					
+					sum+=p4;
+					
+					context.beginPath();
+					context.moveTo( canvas.width/2, canvas.height/2 );
+					context.arc( canvas.width/2, canvas.height/2, 200, ((sum/sumAll) * 360 + 270) * radiany, 270 * radiany, false );
+					context.closePath();
+					context.fillStyle = '#fe8bbd';	//pink
+					context.fill();
+					
+					context.font = "30pt Times New Roman";
+					context.fillStyle = "#02d100";
+					pom = (p1/sumAll) * 100;
+					context.fillText(pom.toFixed(2) + "%", canvas.width/2 + 150, canvas.height/2 - 160 );
+					
+					context.fillStyle = "#ec0200";
+					pom = (p2/sumAll) * 100;
+					context.fillText(pom.toFixed(2) + "%", canvas.width/2 + 160, canvas.height/2 + 160 );
+					
+					context.fillStyle = "#0502dd";
+					pom = (p3/sumAll) * 100;
+					context.fillText(pom.toFixed(2) + "%", canvas.width/2 - 50, canvas.height/2 + 250 );
+					
+					context.fillStyle = "#fefd3a";
+					pom = (p4/sumAll) * 100;
+					context.fillText(pom.toFixed(2) + "%", canvas.width/2 - 280, canvas.height/2 + 160 );
+					
+					context.fillStyle = "#fe8bbd";
+					pom = (p5/sumAll) * 100;
+					context.fillText(pom.toFixed(2) + "%", canvas.width/2 - 260, canvas.height/2 - 160 );
+					
+					
+				}
+			</script>
+    </head>
+    <body>
+		<form>
+		1 <input type="text" name="one"   value="0"> <BR>
+		2 <input type="text" name="two"   value="0"> <BR>
+		3 <input type="text" name="three" value="0"> <BR>
+		4 <input type="text" name="four"  value="0"> <BR>
+		5 <input type="text" name="five"  value="0"> <BR>
+		  <input type="button" name="a" value="Rysuj" onclick="draw(this.form);">
+	<canvas id="image" width="1200" height="500">
+	</canvas>
+	</form>
+    </body>
+</html>
