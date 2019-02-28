@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+ <meta charset="utf-8">
+ <title>Canvas</title>
+	<script type="text/javascript">
+	
+	 function draw(form) {
+	 var p1 = parseFloat( form.x1.value );
+	 var p2 = parseFloat( form.y1.value );
+	 var p3 = parseFloat( form.x2.value );
+	 var p4 = parseFloat( form.y2.value );
+	 var k1	= parseFloat( form.xx1.value );
+	 var k2 = parseFloat( form.yy1.value );
+	 var k3 = parseFloat( form.r.value );
+	 var x	= form.number.value;
+	 var canvas = document.getElementById( 'image' );
+	 var context = canvas.getContext( '2d' );
+		 context.strokeRect( p1+10, p2+10, p3, p4 );
+		 context.arc(k1,k2+k3+10,k3,2*Math.PI,0,false);
+			context.strokeStyle = "black";
+			context.stroke();
+			context.fillStyle="white";
+				for(var i = 1, j = 40; i < x ; i++, j+=30 ){
+					context.fillRect( p1+j, p2+j, p3, p4 );
+					context.strokeRect( p1+j, p2+j, p3, p4 );
+					context.beginPath();
+					context.arc( k1+j, k2+k3+j, k3, 2*Math.PI, 0, false );
+					context.stroke();
+					context.fill();
+				}
+		 
+ }
+	</script>
+</head>
+<body>
+	<form>
+		x= 		<input type="text" 	 name="x1" 		value="0"> &emsp;&emsp;
+		x=		<input type="text"	 name="xx1" 	value="250"><BR>
+		y= 		<input type="text" 	 name="y1" 		value="0"> &emsp;&emsp;
+		y=		<input type="text" 	 name="yy1" 	value="0"><BR>
+		bokx= 	<input type="text" 	 name="x2" 		value="100" size="16">&emsp;&emsp;&ensp;
+		r=		<input type="text" 	 name="r"	 	value="50"><BR>
+		boky= 	<input type="text"	 name="y2" 		value="100" size="16"><BR>
+		ilosc=  <input type="number" name="number"  value="1"><BR>
+				<input type="button" name="a" 		value="Rysuj" onclick="draw(this.form);">
+	<canvas id="image" width="1200" height="500">
+	</canvas>
+	</form>
+</body>
+</html>
