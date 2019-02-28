@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+ <meta charset="utf-8">
+  <title>Canvas</title>
+	<script type="text/javascript">
+		 function draw(form) {
+		 var name1 = form.name1.value;
+		 var p1 = parseFloat(form.p11.value);
+		 var p2 = parseFloat(form.p12.value);
+		 var p3 = parseFloat(form.p13.value);
+		 var p4 = parseFloat(form.p14.value);
+		 var z1 = parseFloat(form.z11.value);
+		 var z2 = parseFloat(form.z12.value);
+		 var z3 = parseFloat(form.z13.value);
+		 var z4 = parseFloat(form.z14.value);
+		 var canvas1 = document.getElementById('image1');
+		 var context1 = canvas1.getContext('2d');
+			context1.clearRect( 0, 0, canvas1.width, canvas1.height );
+			context1.beginPath();
+			context1.moveTo( 50, canvas1.height);
+			context1.lineTo( canvas1.width - 50, canvas1.height );
+			context1.moveTo( 50, canvas1.height);
+			context1.lineTo( 50, 30 );
+			context1.closePath();
+			context1.lineWidth = 5;
+			context1.strokeStyle = "#000";
+			context1.stroke();
+			
+			var h = canvas1.height;
+			context1.beginPath();
+			for (var i = 4; i >= 0 ; i--){
+			    h-=50;
+				context1.moveTo( 50, h );
+				context1.lineTo( canvas1.width - 50, h);
+			}
+			context1.closePath();
+			context1.lineWidth = 2;
+			context1.strokeStyle = "#808080";
+			context1.stroke(); 
+			
+			context1.strokeStyle = '#ae0403';
+			context1.lineWidth = 30;
+			context1.lineCap = 'butt';
+			context1.beginPath();
+			context1.moveTo( 140, canvas1.height );
+			context1.lineTo( 140, canvas1.height - p1/2);
+			context1.moveTo( 260, canvas1.height );
+			context1.lineTo( 260, canvas1.height - p2/2);
+			context1.moveTo( 380, canvas1.height );
+			context1.lineTo( 380, canvas1.height - p3/2);
+			context1.moveTo( 500, canvas1.height );
+			context1.lineTo( 500, canvas1.height - p4/2);
+			context1.stroke();
+			
+			context1.strokeStyle = '#010454';
+			context1.lineWidth = 30;
+			context1.lineCap = 'butt';
+			context1.beginPath();
+			context1.moveTo( 170, canvas1.height );
+			context1.lineTo( 170, canvas1.height - z1/2);
+			context1.moveTo( 290, canvas1.height );
+			context1.lineTo( 290, canvas1.height - z2/2);
+			context1.moveTo( 410, canvas1.height );
+			context1.lineTo( 410, canvas1.height - z3/2);
+			context1.moveTo( 530, canvas1.height );
+			context1.lineTo( 530, canvas1.height - z4/2);
+			context1.stroke();
+				
+			context1.font = "10pt Times New Roman";
+			context1.fillStyle = "#000";	
+			
+			context1.fillText("100 000", 5, canvas1.height - 40);
+			context1.fillText("200 000", 5, canvas1.height - 90);
+			context1.fillText("300 000", 5, canvas1.height - 140);
+			context1.fillText("400 000", 5, canvas1.height - 190);
+			context1.fillText("500 000", 5, canvas1.height - 240);
+			
+			context1.font = "20pt Times New Roman";
+			context1.fillStyle = "#000";	
+			
+			context1.fillText(name1, 10, 20);
+		
+		 var name2 = form.name2.value;
+		 var p21 = parseFloat(form.p21.value);
+		 var p22 = parseFloat(form.p22.value);
+		 var p23 = parseFloat(form.p23.value);
+		 var p24 = parseFloat(form.p24.value);
+		 var z21 = parseFloat(form.z21.value);
+		 var z22 = parseFloat(form.z22.value);
+		 var z23 = parseFloat(form.z23.value);
+		 var z24 = parseFloat(form.z24.value);
+		 var canvas2 = document.getElementById('image2');
+		 var context2 = canvas2.getContext('2d');
+			context2.clearRect( 0, 0, canvas2.width, canvas2.height );
+			context2.beginPath();
+			context2.moveTo( 50, canvas2.height);
+			context2.lineTo( canvas2.width - 50, canvas2.height );
+			context2.moveTo( 50, canvas2.height);
+			context2.lineTo( 50, 30 );
+			context2.closePath();
+			context2.lineWidth = 5;
+			context2.strokeStyle = "#000";
+			context2.stroke();
+			
+			var h2 = canvas2.height;
+			context2.beginPath();
+			for (var i = 4; i >= 0 ; i--){
+			    h2-=50;
+				context2.moveTo( 50, h2 );
+				context2.lineTo( canvas2.width - 50, h2);
+			}
+			context2.closePath();
+			context2.lineWidth = 2;
+			context2.strokeStyle = "#808080";
+			context2.stroke(); 
+			
+			context2.strokeStyle = '#ae0403';
+			context2.lineWidth = 30;
+			context2.lineCap = 'butt';
+			context2.beginPath();
+			context2.moveTo( 140, canvas2.height );
+			context2.lineTo( 140, canvas2.height - p21/2);
+			context2.moveTo( 260, canvas2.height );
+			context2.lineTo( 260, canvas2.height - p22/2);
+			context2.moveTo( 380, canvas2.height );
+			context2.lineTo( 380, canvas2.height - p23/2);
+			context2.moveTo( 500, canvas2.height );
+			context2.lineTo( 500, canvas2.height - p24/2);
+			context2.stroke();
+			
+			context2.strokeStyle = '#010454';
+			context2.lineWidth = 30;
+			context2.lineCap = 'butt';
+			context2.beginPath();
+			context2.moveTo( 170, canvas2.height );
+			context2.lineTo( 170, canvas2.height - z21/2);
+			context2.moveTo( 290, canvas2.height );
+			context2.lineTo( 290, canvas2.height - z22/2);
+			context2.moveTo( 410, canvas2.height );
+			context2.lineTo( 410, canvas2.height - z23/2);
+			context2.moveTo( 530, canvas2.height );
+			context2.lineTo( 530, canvas2.height - z24/2);
+			context2.stroke();
+				
+			context2.font = "10pt Times New Roman";
+			context2.fillStyle = "#000";	
+			
+			context2.fillText("100 000", 5, canvas2.height - 40);
+			context2.fillText("200 000", 5, canvas2.height - 90);
+			context2.fillText("300 000", 5, canvas2.height - 140);
+			context2.fillText("400 000", 5, canvas2.height - 190);
+			context2.fillText("500 000", 5, canvas2.height - 240);
+			
+			context2.font = "20pt Times New Roman";
+			context2.fillStyle = "#000";	
+			
+			context2.fillText(name2, 10, 20);
+			
+		 var name3 = form.name3.value;	
+		 var p31 = parseFloat(form.p31.value);
+		 var p32 = parseFloat(form.p32.value);
+		 var p33 = parseFloat(form.p33.value);
+		 var p34 = parseFloat(form.p34.value);
+		 var z31 = parseFloat(form.z31.value);
+		 var z32 = parseFloat(form.z32.value);
+		 var z33 = parseFloat(form.z33.value);
+		 var z34 = parseFloat(form.z34.value);
+		 var canvas3 = document.getElementById('image3');
+		 var context3 = canvas3.getContext('2d');
+			context3.clearRect( 0, 0, canvas3.width, canvas3.height );
+			context3.beginPath();
+			context3.moveTo( 50, canvas3.height);
+			context3.lineTo( canvas3.width - 50, canvas3.height );
+			context3.moveTo( 50, canvas3.height);
+			context3.lineTo( 50, 30 );
+			context3.closePath();
+			context3.lineWidth = 5;
+			context3.strokeStyle = "#000";
+			context3.stroke();
+			
+			var h3 = canvas3.height;
+			context3.beginPath();
+			for (var i = 4; i >= 0 ; i--){
+			    h3-=50;
+				context3.moveTo( 50, h3 );
+				context3.lineTo( canvas3.width - 50, h3);
+			}
+			context3.closePath();
+			context3.lineWidth = 2;
+			context3.strokeStyle = "#808080";
+			context3.stroke(); 
+			
+			context3.strokeStyle = '#ae0403';
+			context3.lineWidth = 30;
+			context3.lineCap = 'butt';
+			context3.beginPath();
+			context3.moveTo( 140, canvas3.height );
+			context3.lineTo( 140, canvas3.height - p31/2);
+			context3.moveTo( 260, canvas3.height );
+			context3.lineTo( 260, canvas3.height - p32/2);
+			context3.moveTo( 380, canvas3.height );
+			context3.lineTo( 380, canvas3.height - p33/2);
+			context3.moveTo( 500, canvas3.height );
+			context3.lineTo( 500, canvas3.height - p34/2);
+			context3.stroke();
+			
+			context3.strokeStyle = '#010454';
+			context3.lineWidth = 30;
+			context3.lineCap = 'butt';
+			context3.beginPath();
+			context3.moveTo( 170, canvas3.height );
+			context3.lineTo( 170, canvas3.height - z31/2);
+			context3.moveTo( 290, canvas3.height );
+			context3.lineTo( 290, canvas3.height - z32/2);
+			context3.moveTo( 410, canvas3.height );
+			context3.lineTo( 410, canvas3.height - z33/2);
+			context3.moveTo( 530, canvas3.height );
+			context3.lineTo( 530, canvas3.height - z34/2);
+			context3.stroke();
+				
+			context3.font = "10pt Times New Roman";
+			context3.fillStyle = "#000";	
+			
+			context3.fillText("100 000", 5, canvas3.height - 40);
+			context3.fillText("200 000", 5, canvas3.height - 90);
+			context3.fillText("300 000", 5, canvas3.height - 140);
+			context3.fillText("400 000", 5, canvas3.height - 190);
+			context3.fillText("500 000", 5, canvas3.height - 240);
+			
+			context3.font = "20pt Times New Roman";
+			context3.fillStyle = "#000";	
+			
+			context3.fillText(name3, 10, 20);
+			
+		 var name4 = form.name4.value;	
+		 var p41 = parseFloat(form.p41.value);
+		 var p42 = parseFloat(form.p42.value);
+		 var p43 = parseFloat(form.p43.value);
+		 var p44 = parseFloat(form.p44.value);
+		 var z41 = parseFloat(form.z41.value);
+		 var z42 = parseFloat(form.z42.value);
+		 var z43 = parseFloat(form.z43.value);
+		 var z44 = parseFloat(form.z44.value);
+		 var canvas4 = document.getElementById('image4');
+		 var context4 = canvas4.getContext('2d');
+			context4.clearRect( 0, 0, canvas4.width, canvas4.height );
+			context4.beginPath();
+			context4.moveTo( 50, canvas4.height);
+			context4.lineTo( canvas4.width - 50, canvas4.height );
+			context4.moveTo( 50, canvas4.height);
+			context4.lineTo( 50, 30 );
+			context4.closePath();
+			context4.lineWidth = 5;
+			context4.strokeStyle = "#000";
+			context4.stroke();
+			
+			var h4 = canvas4.height;
+			context4.beginPath();
+			for (var i = 4; i >= 0 ; i--){
+			    h4-=50;
+				context4.moveTo( 50, h4 );
+				context4.lineTo( canvas4.width - 50, h4);
+			}
+			context4.closePath();
+			context4.lineWidth = 2;
+			context4.strokeStyle = "#808080";
+			context4.stroke(); 
+			
+			context4.strokeStyle = '#ae0403';
+			context4.lineWidth = 30;
+			context4.lineCap = 'butt';
+			context4.beginPath();
+			context4.moveTo( 140, canvas4.height );
+			context4.lineTo( 140, canvas4.height - p41/2);
+			context4.moveTo( 260, canvas4.height );
+			context4.lineTo( 260, canvas4.height - p42/2);
+			context4.moveTo( 380, canvas4.height );
+			context4.lineTo( 380, canvas4.height - p43/2);
+			context4.moveTo( 500, canvas4.height );
+			context4.lineTo( 500, canvas4.height - p44/2);
+			context4.stroke();
+			
+			context4.strokeStyle = '#010454';
+			context4.lineWidth = 30;
+			context4.lineCap = 'butt';
+			context4.beginPath();
+			context4.moveTo( 170, canvas4.height );
+			context4.lineTo( 170, canvas4.height - z41/2);
+			context4.moveTo( 290, canvas4.height );
+			context4.lineTo( 290, canvas4.height - z42/2);
+			context4.moveTo( 410, canvas4.height );
+			context4.lineTo( 410, canvas4.height - z43/2);
+			context4.moveTo( 530, canvas4.height );
+			context4.lineTo( 530, canvas4.height - z44/2);
+			context4.stroke();
+				
+			context4.font = "10pt Times New Roman";
+			context4.fillStyle = "#000";	
+			
+			context4.fillText("100 000", 5, canvas4.height - 40);
+			context4.fillText("200 000", 5, canvas4.height - 90);
+			context4.fillText("300 000", 5, canvas4.height - 140);
+			context4.fillText("400 000", 5, canvas4.height - 190);
+			context4.fillText("500 000", 5, canvas4.height - 240);
+			
+			context4.font = "20pt Times New Roman";
+			context4.fillStyle = "#000";	
+			
+			context4.fillText(name4, 10, 20);
+		 
+		 }
+	</script>
+</head>
+<body>
+	<form>
+		<table>
+		<tr>
+		<td>
+			Nazwa firmy= <input type="text" name="name1" value=""><BR>
+		Przych(tys)= <input type="text" name="p11" value="0" size="3">
+		           <input type="text" name="p12" value="0" size="3">
+				   <input type="text" name="p13" value="0" size="3">
+				   <input type="text" name="p14" value="0" size="3"><BR>
+		Zyski(tys)= <input type="text" name="z11" value="0" size="3">
+		       <input type="text" name="z12" value="0" size="3">
+	    	   <input type="text" name="z13" value="0" size="3">
+			   <input type="text" name="z14" value="0" size="3"><BR>
+		</td>
+		<td>
+		  	Nazwa firmy= <input type="text" name="name2" value=""><BR>
+		Przych(tys)= <input type="text" name="p21" value="0" size="3">
+		           <input type="text" name="p22" value="0" size="3">
+				   <input type="text" name="p23" value="0" size="3">
+				   <input type="text" name="p24" value="0" size="3"><BR>
+		Zyski(tys)= <input type="text" name="z21" value="0" size="3">
+		       <input type="text" name="z22" value="0" size="3">
+	    	   <input type="text" name="z23" value="0" size="3">
+			   <input type="text" name="z24" value="0" size="3"><BR>
+		</td>
+		<td>
+		  	Nazwa firmy= <input type="text" name="name3" value=""><BR>
+		Przych(tys)= <input type="text" name="p31" value="0" size="3">
+		           <input type="text" name="p32" value="0" size="3">
+				   <input type="text" name="p33" value="0" size="3">
+				   <input type="text" name="p34" value="0" size="3"><BR>
+		Zyski(tys)= <input type="text" name="z31" value="0" size="3">
+		       <input type="text" name="z32" value="0" size="3">
+	    	   <input type="text" name="z33" value="0" size="3">
+			   <input type="text" name="z34" value="0" size="3"><BR>
+		</td>
+		<td>
+		  	Nazwa firmy= <input type="text" name="name4" value=""><BR>
+		Przych(tys)= <input type="text" name="p41" value="0" size="3">
+		           <input type="text" name="p42" value="0" size="3">
+				   <input type="text" name="p43" value="0" size="3">
+				   <input type="text" name="p44" value="0" size="3"><BR>
+		Zyski(tys)= <input type="text" name="z41" value="0" size="3">
+		       <input type="text" name="z42" value="0" size="3">
+	    	   <input type="text" name="z43" value="0" size="3">
+			   <input type="text" name="z44" value="0" size="3"><BR>
+		</td>
+		</tr>
+		</table>
+		<input type="button" name="a" value="Rysuj" onclick="draw(this.form);">
+	
+	<table>
+		<TR>
+		  <TD><canvas id="image1" width="650" height="300"></TD>
+		  <TD><canvas id="image2" width="650" height="300"></TD>
+		</TR>
+		<TR>
+		  <TD><canvas id="image3" width="650" height="300"></TD>
+		  <TD><canvas id="image4" width="650" height="300"></TD>
+		</TR>
+	</table>
+	</canvas>
+	</form>
+</body>
+</html>
